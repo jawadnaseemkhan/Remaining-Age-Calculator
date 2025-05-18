@@ -1,25 +1,28 @@
-# 🚨 Don't change the code below 👇
 age = input("What is your current age?\n")
-# 🚨 Don't change the code above 👆
-x = 365
-y = 52
-z = 12
-a = 0
-b = 90
 
-#Write your code below this line 👇
-e = b*x
-f = b*y
-g = b*z
-#total age - current age
-age_days = int(age)*x
-age_weeks = int(age)*y
-age_months = int(age)*z
+# Constants
+DAYS_IN_YEAR = 365
+WEEKS_IN_YEAR = 52
+MONTHS_IN_YEAR = 12
+MAX_AGE = 90
 
-age_days_new = e - age_days
-age_weeks_new = f - age_weeks
-age_months_new = g - age_months
+# Convert input to int
+current_age = int(age)
 
-print(f"You have {age_days_new} days, {age_weeks_new} weeks, and {age_months_new} months left.")
+# Total time for 90 years
+total_days = MAX_AGE * DAYS_IN_YEAR
+total_weeks = MAX_AGE * WEEKS_IN_YEAR
+total_months = MAX_AGE * MONTHS_IN_YEAR
 
+# Time already lived
+lived_days = current_age * DAYS_IN_YEAR
+lived_weeks = current_age * WEEKS_IN_YEAR
+lived_months = current_age * MONTHS_IN_YEAR
 
+# Time left
+days_left = total_days - lived_days
+weeks_left = total_weeks - lived_weeks
+months_left = total_months - lived_months
+
+# Output
+print(f"You have {days_left} days, {weeks_left} weeks, and {months_left} months left.")
